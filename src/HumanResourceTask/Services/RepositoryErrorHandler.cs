@@ -10,22 +10,13 @@ namespace HumanResourceTask.Services
         {
             if (exception is RepositoryException repositoryException)
             {
-                if (repositoryException.ErrorType == RepositoryErrorType.ConstraintViolation)
+                return repositoryException.ErrorType switch
                 {
-                    return new ValidationError(repositoryException.ColumnName, "Must be unique.");
-                }
-                if (repositoryException.ErrorType == RepositoryErrorType.ForeignKeyVoilation)
-                {
-                    return new ValidationError(repositoryException.ColumnName, "Has an invalid value.");
-                }
-                else if (repositoryException.ErrorType == RepositoryErrorType.SqlException)
-                {
-                    return new ExceptionalError(exception.InnerException);
-                }
-                else
-                {
-                    return new Error(repositoryException.Message);
-                }
+                    RepositoryErrorType.ConstraintViolation => new ValidationError(repositoryException.ColumnName, "Must be unique."),
+                    RepositoryErrorType.ForeignKeyVoilation => new ValidationError(repositoryException.ColumnName, "Has an invalid value."),
+                    RepositoryErrorType.SqlException => new ExceptionalError(exception.InnerException),
+                    _ => new Error(repositoryException.Message),
+                };
             }
 
             return new ExceptionalError(exception);
