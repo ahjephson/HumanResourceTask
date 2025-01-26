@@ -14,6 +14,7 @@ The solution is structured into multiple projects, each handling specific aspect
 - **SQL LocalDB** (accessed via [Dapper](https://github.com/DapperLib/Dapper))
 - **MudBlazor** (for the web UI)
 - **xUnit** (for unit tests)
+- **Microsoft Entra** for OAuth 2.0 authentication
 
 ---
 
