@@ -1,0 +1,58 @@
+﻿@page "/employee/list"
+
+<MudText Typo="Typo.h4" Class="mb-5">Employees</MudText>
+
+<MudToolBar>
+    <MudButton StartIcon="@Icons.Material.Filled.Add" Href="/employee/create">Create</MudButton>
+</MudToolBar>
+<MudDataGrid @ref="DataGrid" T="EmployeeListItem" ServerData="ServerReload" Filterable="true" FilterMode="@DataGridFilterMode.ColumnFilterMenu" RowsPerPage="@PageSize">
+    <Columns>
+        <PropertyColumn Property="x => x.FirstName" Title="First Name" Filterable="false" />
+        <PropertyColumn Property="x => x.LastName" Title="Last Name" Filterable="false" />
+        <PropertyColumn Property="x => x.DateOfBirth" Title="Date of Birth" Filterable="false" />
+        <PropertyColumn Property="x => x.DepartmentName" Title="Department" Filterable="true">
+            <FilterTemplate>
+                <MudStack Spacing="0" Style="overflow-y:auto;max-height:250px">
+                    <MudSelect @bind-Value="DepartmentId">
+                        @foreach (var department in Departments)
+                        {
+                            <MudSelectItem T="Guid?" Value="department.Id">@department.Name</MudSelectItem>
+                        }
+                    </MudSelect>
+                </MudStack>
+                <MudStack Row="true">
+                    <MudButton OnClick="@ClearDepartmentFilter">Clear</MudButton>
+                    <MudButton Color="@Color.Primary" OnClick="@ApplyDepartmentFilter">Filter</MudButton>
+                </MudStack>
+            </FilterTemplate>
+        </PropertyColumn>
+        <PropertyColumn Property="x => x.StatusName" Title="Status" Filterable="true">
+            <FilterTemplate>
+                <MudStack Spacing="0" Style="overflow-y:auto;max-height:250px">
+                    <MudSelect @bind-Value="StatusId">
+                        @foreach (var status in Statuses)
+                        {
+                            <MudSelectItem T="Guid?" Value="status.Id">@status.Name</MudSelectItem>
+                        }
+                    </MudSelect>
+                </MudStack>
+                <MudStack Row="true">
+                    <MudButton OnClick="@ClearStatusFilter">Clear</MudButton>
+                    <MudButton Color="@Color.Primary" OnClick="@ApplyStatusFilter">Filter</MudButton>
+                </MudStack>
+            </FilterTemplate>
+        </PropertyColumn>
+        <PropertyColumn Property="x => x.EmployeeNumber" Title="Employee Number" Filterable="false" />
+        <TemplateColumn CellClass="justify-end" Sortable="false" Filterable="false">
+            <CellTemplate>
+                <MudButtonGroup>
+                    <MudIconButton Icon="@Icons.Material.Outlined.Edit" OnClick="@(() => Edit(context))" title="Edit">Edit</MudIconButton>
+                    <MudIconButton Icon="@Icons.Material.Outlined.Delete" OnClick="@(() => Delete(context))" title="Delete">Delete</MudIconButton>
+                </MudButtonGroup>
+            </CellTemplate>
+        </TemplateColumn>
+    </Columns>
+    <PagerContent>
+        <MudDataGridPager T="EmployeeListItem" PageSizeSelector="false" />
+    </PagerContent>
+</MudDataGrid>

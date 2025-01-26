@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "HumanResourceTask.Database": {
+      "commandName": "Project",
+      "commandLineArgs": "\"Data Source=(LocalDB)\\MSSQLLocalDB;Initial Catalog=HrTask;Integrated Security=True;\""
+    }
+  }
+}

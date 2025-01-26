@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\005_CreateEmployeeView.sql" />
+    <EmbeddedResource Include="Migrations\004_SeedEmployeesTable.sql" />
+    <EmbeddedResource Include="Migrations\003_SeedDepartmentsTable.sql" />
+    <EmbeddedResource Include="Migrations\002_SeedStatusTable.sql" />
+    <EmbeddedResource Include="Migrations\001_CreateTables.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="dbup-sqlserver" Version="6.0.0" />
+  </ItemGroup>
+
+</Project>

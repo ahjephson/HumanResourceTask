@@ -1,0 +1,6 @@
+@HumanResourceTask.Api_HostAddress = http://localhost:5250
+
+GET {{HumanResourceTask.Api_HostAddress}}/employee
+Accept: application/json
+
+###

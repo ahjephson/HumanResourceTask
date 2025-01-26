@@ -1,0 +1,24 @@
+INSERT INTO [dbo].[EmployeeRecord]
+(
+    [Id],
+    [FirstName],
+    [LastName],
+    [Email],
+    [DateOfBirth],
+    [DepartmentId],
+    [StatusId],
+    [EmployeeNumber],
+    [CreatedAtUtc]
+)
+VALUES
+(
+    @Id,
+    @FirstName,
+    @LastName,
+    @Email,
+    @DateOfBirth,
+    @DepartmentId,
+    @StatusId,
+    @EmployeeNumber,
+    @CreatedAtUtc
+)

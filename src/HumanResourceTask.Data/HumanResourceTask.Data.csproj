@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Employee\Queries\Insert.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Employee\Queries\Count.sql" />
+    <EmbeddedResource Include="Employee\Queries\List.sql" />
+    <EmbeddedResource Include="Employee\Queries\FindById.sql" />
+    <EmbeddedResource Include="Employee\Queries\Update.sql" />
+    <EmbeddedResource Include="Employee\Queries\Insert.sql" />
+    <EmbeddedResource Include="Department\Queries\List.sql" />
+    <EmbeddedResource Include="Status\Queries\List.sql" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.35" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.2.2" />
+    <PackageReference Include="Microsoft.Extensions.Options" Version="8.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\HumanResourceTask\HumanResourceTask.csproj" />
+  </ItemGroup>
+
+</Project>

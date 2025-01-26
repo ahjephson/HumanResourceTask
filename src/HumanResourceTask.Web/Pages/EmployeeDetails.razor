@@ -1,0 +1,70 @@
+﻿@page "/employee/details/{id:guid}"
+
+<MudText Typo="Typo.h4" Class="mb-5">@Model.FirstName @Model.LastName</MudText>
+
+<MudCard>
+    @if (ServerError is not null)
+    {
+        <MudAlert Severity="MudBlazor.Severity.Error">@ServerError</MudAlert>
+    }
+
+    <MudForm Model="@Model" @ref="@Form" Validation="@(ValidateValue)" ValidationDelay="100">
+        <MudCardContent>
+            <MudTextField @bind-Value="Model.FirstName"
+                          For="@(() => Model.FirstName)"
+                          Immediate="true"
+                          Label="First Name" />
+
+            <MudTextField @bind-Value="Model.LastName"
+                          For="@(() => Model.LastName)"
+                          Immediate="true"
+                          Label="Last Name" />
+
+            <MudTextField @bind-Value="Model.Email"
+                          For="@(() => Model.Email)"
+                          Immediate="true"
+                          Label="Email" />
+
+            <MudTextField @bind-Value="Model.DateOfBirth"
+                          For="@(() => Model.DateOfBirth)"
+                          Immediate="false"
+                          InputType="InputType.Date"
+                          Label="Date of Birth"
+                          Converter="CustomConverters.DateOnlyConverter "/>
+
+            <MudSelect @ref="DepartmentSelect" T="Guid?" Value="Model.DepartmentId"
+                       ValueChanged="(value) => Model.DepartmentId = value"
+                        For="@(() => Model.DepartmentId)"
+                        Immediate="true"
+                        Label="Department">
+                @foreach (var department in Departments)
+                {
+                    <MudSelectItem T="Guid?" Value="department.Id">@department.Name</MudSelectItem>
+                }
+            </MudSelect>
+
+            <MudSelect @ref="StatusSelect"  T="Guid?" Value="Model.StatusId"
+                       ValueChanged="(value) => Model.StatusId = value"
+                       For="@(() => Model.StatusId)"
+                          Immediate="true"
+                          Label="Status">
+                @foreach (var status in Statuses)
+                {
+                    <MudSelectItem T="Guid?" Value="status.Id">@status.Name</MudSelectItem>
+                }
+            </MudSelect>
+
+            <MudTextField @bind-Value="Model.EmployeeNumber"
+                          For="@(() => Model.EmployeeNumber)"
+                          Immediate="true"
+                          InputType="InputType.Number"
+                          Label="Employee Number" />
+        </MudCardContent>
+        <MudCardContent Class="pa-0">
+
+        </MudCardContent>
+    </MudForm>
+    <MudCardActions>
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" Class="ml-auto" OnClick="@Submit">Save</MudButton>
+    </MudCardActions>
+</MudCard>
