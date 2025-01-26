@@ -68,7 +68,7 @@ Before running the project, ensure you have the following installed:
 Clone the repository to your local machine:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/ahjephson/HumanResourceTask
 cd HumanResourceTask
 ```
 
