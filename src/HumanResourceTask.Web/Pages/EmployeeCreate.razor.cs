@@ -29,6 +29,7 @@ namespace HumanResourceTask.Web.Pages
         private MudForm Form { get; set; } = default!;
 
         private MudSelect<Guid?> DepartmentSelect { get; set; } = default!;
+
         private MudSelect<Guid?> StatusSelect { get; set; } = default!;
 
         private string? ServerError { get; set; }
@@ -62,12 +63,6 @@ namespace HumanResourceTask.Web.Pages
             }
 
             return result.Errors.Select(e => e.ErrorMessage);
-        };
-
-        private readonly Converter<DateOnly?> _dateOnlyConverter = new()
-        {
-            SetFunc = value => value?.ToShortDateString() ?? "",
-            GetFunc = text => string.IsNullOrEmpty(text) ? default : DateOnly.Parse(text)
         };
 
         private async Task Submit()

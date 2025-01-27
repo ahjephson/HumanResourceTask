@@ -33,6 +33,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{590DF53E-4FA
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HumanResourceTask.Web", "src\HumanResourceTask.Web\HumanResourceTask.Web.csproj", "{5B28CAE6-C956-4FDE-A95A-B12EA779000E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HumanResourceTask.Web.Test", "test\HumanResourceTask.Web.Test\HumanResourceTask.Web.Test.csproj", "{876F66BB-D4D1-40C4-A739-48540C58F231}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -83,6 +85,10 @@ Global
 		{5B28CAE6-C956-4FDE-A95A-B12EA779000E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5B28CAE6-C956-4FDE-A95A-B12EA779000E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5B28CAE6-C956-4FDE-A95A-B12EA779000E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{876F66BB-D4D1-40C4-A739-48540C58F231}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{876F66BB-D4D1-40C4-A739-48540C58F231}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{876F66BB-D4D1-40C4-A739-48540C58F231}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{876F66BB-D4D1-40C4-A739-48540C58F231}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -99,5 +105,6 @@ Global
 		{4D9FCF03-E804-42B3-B852-E46EF6317F1D} = {B4E8E3C0-097B-4B07-B18F-4E4F3DD54202}
 		{677138D7-CB6D-4DEF-A949-8ABFE9867BE6} = {B4E8E3C0-097B-4B07-B18F-4E4F3DD54202}
 		{5B28CAE6-C956-4FDE-A95A-B12EA779000E} = {590DF53E-4FA4-4FFA-A630-9102436DEBD9}
+		{876F66BB-D4D1-40C4-A739-48540C58F231} = {B4E8E3C0-097B-4B07-B18F-4E4F3DD54202}
 	EndGlobalSection
 EndGlobal

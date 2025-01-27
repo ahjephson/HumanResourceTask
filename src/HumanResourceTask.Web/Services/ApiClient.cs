@@ -5,7 +5,6 @@ using HumanResourceTask.Api.Dto.Department;
 using HumanResourceTask.Api.Dto.Employee;
 using HumanResourceTask.Api.Dto.Status;
 using Microsoft.AspNetCore.Http.Extensions;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace HumanResourceTask.Web.Services
 {
