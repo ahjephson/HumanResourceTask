@@ -1,12 +1,13 @@
+using System.Diagnostics.CodeAnalysis;
 using System.Reflection;
 using DbUp;
-using Microsoft.Data.SqlClient;
 
 namespace HumanResourceTask.Database
 {
     internal class Program
     {
-        static void Main(string[] args)
+        [ExcludeFromCodeCoverage]
+        private static void Main(string[] args)
         {
             if (args.Length == 0)
             {
@@ -23,7 +24,6 @@ namespace HumanResourceTask.Database
                 .WithScriptsEmbeddedInAssembly(Assembly.GetExecutingAssembly())
                 .LogToConsole()
                 .Build();
-
 
             var result = upgrader.PerformUpgrade();
             if (result.Successful)

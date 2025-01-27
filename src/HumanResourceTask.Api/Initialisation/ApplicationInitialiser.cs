@@ -1,3 +1,4 @@
+using System.Diagnostics.CodeAnalysis;
 using Dapper;
 using HumanResourceTask.Data;
 using HumanResourceTask.Data.Department;
@@ -10,12 +11,14 @@ namespace HumanResourceTask.Api.Initialisation
 {
     public static class ApplicationInitialiser
     {
+        [ExcludeFromCodeCoverage]
         public static void AddApplication(this IServiceCollection services)
         {
             AddResositories(services);
             AddServices(services);
         }
 
+        [ExcludeFromCodeCoverage]
         private static void AddResositories(IServiceCollection services)
         {
             SqlMapper.AddTypeHandler(new DateOnlyTypeHandler());
@@ -29,6 +32,7 @@ namespace HumanResourceTask.Api.Initialisation
             services.AddSingleton<IDepartmentRepository, SqlDepartmentRepository>();
         }
 
+        [ExcludeFromCodeCoverage]
         private static void AddServices(IServiceCollection services)
         {
             services.AddSingleton<IEmployeeService, EmployeeService>();

@@ -1,9 +1,11 @@
 using System.Data;
+using System.Diagnostics.CodeAnalysis;
 using Dapper;
 using static Dapper.SqlMapper;
 
 namespace HumanResourceTask.Data
 {
+    [ExcludeFromCodeCoverage(Justification = "Any tests on this class would onyl be testing Dapper call redirects. Due to the extension method setup Dapper uses this is difficult and not worth the time.")]
     public class DapperWrapper : IDapperWrapper
     {
         public Task<int> ExecuteAsync(IDbConnection connection, string sql, object? param = null, IDbTransaction? transaction = null, int? commandTimeout = null, CommandType? commandType = null)

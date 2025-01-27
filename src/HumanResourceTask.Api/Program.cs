@@ -1,5 +1,5 @@
+using System.Diagnostics.CodeAnalysis;
 using System.IdentityModel.Tokens.Jwt;
-using System.Security.Claims;
 using FastEndpoints;
 using HumanResourceTask.Api.Authentication;
 using HumanResourceTask.Api.Dto;
@@ -12,6 +12,7 @@ namespace HumanResourceTask.Api
 {
     public class Program
     {
+        [ExcludeFromCodeCoverage]
         public static void Main(string[] args)
         {
             var builder = WebApplication.CreateBuilder(args);
@@ -32,13 +33,9 @@ namespace HumanResourceTask.Api
                 {
                     var configurationSection = builder.Configuration.GetSection("AzureAd");
                     configurationSection.Bind(jwtBearerOptions);
-                    jwtBearerOptions.TokenValidationParameters.NameClaimType = "sub"; 
+                    jwtBearerOptions.TokenValidationParameters.NameClaimType = "sub";
                     jwtBearerOptions.TokenValidationParameters.RoleClaimType = "role";
                     jwtBearerOptions.Audience = "bb441160-e951-4cd5-a1ac-9123e93167fc";
-                    //jwtBearerOptions.Events = new JwtBearerEvents();
-                    //jwtBearerOptions.Events.OnMessageReceived = OnMessageReceived;
-                    //jwtBearerOptions.Events.OnAuthenticationFailed = OnAuthenticationFailed;
-                    //jwtBearerOptions.Events.OnTokenValidated = OnTokenValidated;
                 }, identityOptions =>
                 {
                     var configurationSection = builder.Configuration.GetSection("AzureAd");
@@ -67,17 +64,6 @@ namespace HumanResourceTask.Api
 
             app.UseAuthentication();
 
-            //app.Use(async (context, next) =>
-            //{
-            //    if (context.User.Identity?.IsAuthenticated ?? false)
-            //    {
-            //        var claims = context.User.Claims.Select(c => $"{c.Type}: {c.Value}");
-            //        Console.WriteLine("Authenticated User Claims:");
-            //        Console.WriteLine(string.Join(Environment.NewLine, claims));
-            //    }
-            //    await next();
-            //});
-
             app.UseAuthorization();
 
             app.UseFastEndpoints(c =>
@@ -100,22 +86,5 @@ namespace HumanResourceTask.Api
 
             app.Run();
         }
-
-        //private static Task OnTokenValidated(TokenValidatedContext context)
-        //{
-        //    var identity = context.Principal?.Identity as ClaimsIdentity;
-        //    identity?.AddClaim(new Claim("role", "admin"));
-        //    return Task.CompletedTask;
-        //}
-
-        //private static Task OnAuthenticationFailed(AuthenticationFailedContext context)
-        //{
-        //    return Task.CompletedTask;
-        //}
-
-        //private static Task OnMessageReceived(MessageReceivedContext context)
-        //{
-        //    return Task.CompletedTask;
-        //}
     }
 }
