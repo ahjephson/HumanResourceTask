@@ -1,4 +1,4 @@
-﻿namespace HumanResourceTask.MetaModels
+namespace HumanResourceTask.MetaModels
 {
     public enum SortDirection
     {

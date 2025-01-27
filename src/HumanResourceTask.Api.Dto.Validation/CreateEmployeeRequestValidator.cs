@@ -1,5 +1,4 @@
 using FluentValidation;
-using FluentValidation.Results;
 using HumanResourceTask.Api.Dto.Employee;
 
 namespace HumanResourceTask.Api.Dto.Validation

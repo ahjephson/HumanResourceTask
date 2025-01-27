@@ -1,4 +1,4 @@
-﻿namespace HumanResourceTask.Models
+namespace HumanResourceTask.Models
 {
     public record Status
     {

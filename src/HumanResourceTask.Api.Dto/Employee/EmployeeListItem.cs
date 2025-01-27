@@ -1,4 +1,4 @@
-﻿namespace HumanResourceTask.Api.Dto.Employee
+namespace HumanResourceTask.Api.Dto.Employee
 {
     public record EmployeeListItem
     {

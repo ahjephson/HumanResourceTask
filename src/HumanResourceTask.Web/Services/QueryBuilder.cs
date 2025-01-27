@@ -2,7 +2,6 @@
 // Licensed under the Apache License, Version 2.0. See License.txt in the project root for license information.
 
 using System.Collections;
-using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
 using System.Text;
 using System.Text.Encodings.Web;
@@ -10,7 +9,6 @@ using System.Text.Encodings.Web;
 namespace Microsoft.AspNetCore.Http.Extensions
 {
     [ExcludeFromCodeCoverage]
-    // The IEnumerable interface is required for the collection initialization syntax: new QueryBuilder() { { "key", "value" } };
     public class QueryBuilder : IEnumerable<KeyValuePair<string, string>>
     {
         private IList<KeyValuePair<string, string>> _params;

@@ -1,4 +1,4 @@
-﻿using HumanResourceTask.Models;
+using HumanResourceTask.Models;
 
 namespace HumanResourceTask.Repositories
 {

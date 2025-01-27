@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Threading.Tasks;
 using FluentAssertions;
 using FluentResults;
 using HumanResourceTask.Errors;
@@ -10,7 +7,6 @@ using HumanResourceTask.Models;
 using HumanResourceTask.Repositories;
 using HumanResourceTask.Services;
 using Moq;
-using Xunit;
 
 namespace HumanResourceTask.Test.Services
 {

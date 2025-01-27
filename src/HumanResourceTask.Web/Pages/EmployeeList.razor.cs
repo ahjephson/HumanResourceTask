@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Options;
 using MudBlazor;
-using static MudBlazor.CategoryTypes;
 
 namespace HumanResourceTask.Web.Pages
 {

@@ -9,6 +9,5 @@ namespace HumanResourceTask.Api.Authentication
         public const string UpdateEmployee = nameof(UpdateEmployee);
 
         public const string DeleteEmployee = nameof(DeleteEmployee);
-
     }
 }

@@ -1,15 +1,15 @@
 using Bunit;
 using FluentAssertions;
-using Moq;
-using HumanResourceTask.Web.Pages;
-using HumanResourceTask.Api.Dto.Department;
-using HumanResourceTask.Api.Dto.Status;
-using HumanResourceTask.Api.Dto.Employee;
-using HumanResourceTask.Web.Services;
-using MudBlazor;
-using Microsoft.AspNetCore.Components;
 using FluentResults;
+using HumanResourceTask.Api.Dto.Department;
+using HumanResourceTask.Api.Dto.Employee;
+using HumanResourceTask.Api.Dto.Status;
+using HumanResourceTask.Web.Pages;
+using HumanResourceTask.Web.Services;
+using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.DependencyInjection;
+using Moq;
+using MudBlazor;
 
 namespace HumanResourceTask.Web.Test.Pages
 {

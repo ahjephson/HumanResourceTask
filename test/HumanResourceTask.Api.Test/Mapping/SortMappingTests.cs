@@ -2,7 +2,6 @@ using FluentAssertions;
 using HumanResourceTask.Api.Dto;
 using HumanResourceTask.Api.Mapping;
 using HumanResourceTask.MetaModels;
-using Xunit;
 
 namespace HumanResourceTask.Api.Test.Mapping
 {

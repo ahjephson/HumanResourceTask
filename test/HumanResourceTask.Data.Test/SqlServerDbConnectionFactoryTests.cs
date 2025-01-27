@@ -26,6 +26,5 @@ namespace HumanResourceTask.Data.Test
             connection.Should().BeOfType<SqlConnection>();
             connection.ConnectionString.Should().Be(connectionString);
         }
-
     }
 }

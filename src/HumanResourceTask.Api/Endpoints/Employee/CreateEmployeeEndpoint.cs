@@ -1,4 +1,3 @@
-using FluentValidation;
 using HumanResourceTask.Api.Authentication;
 using HumanResourceTask.Api.Dto.Employee;
 using HumanResourceTask.Api.Dto.Validation;

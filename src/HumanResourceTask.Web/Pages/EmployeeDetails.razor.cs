@@ -7,7 +7,6 @@ using HumanResourceTask.Web.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Components;
 using MudBlazor;
-using Humanizer;
 
 namespace HumanResourceTask.Web.Pages
 {
